@@ -9,7 +9,7 @@
 
 /* Reset font styles */
 body, button, input, select, textarea {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Circular', sans-serif;
     font-size: 15px;
     font-weight: inherit;
     line-height: 50px;
@@ -26,7 +26,7 @@ a {
 }
 
 label {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Circular', sans-serif;
     font-size: 20px;
     text-align: left;
     color: rgb(29, 129, 79);
@@ -34,22 +34,26 @@ label {
 
 input[name="bpm"] {
     background-color: white;
-    padding-top: 10px;
-    padding-right: 20px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    border-radius: 5px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 4px rgb(29, 129, 79);
 }
 
 input{
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 4px rgb(29, 129, 79);
 }
 
 /* Reset form element styles */
 button, input, select, textarea {
     background-color: transparent;
-    border: none;
-    outline: none;
+}
+
+button{
+    box-shadow: 0 0 15px 4px rgb(138, 46, 200);
 }
 
 /* Reset button styles */
