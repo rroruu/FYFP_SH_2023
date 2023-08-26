@@ -1,0 +1,52 @@
+/* Reset.css - Normalize default styles */
+
+/* Remove margin and padding from all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Reset font styles */
+body, button, input, select, textarea {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: inherit;
+    line-height: 50px;
+}
+
+/* Reset list styles */
+ul, ol {
+    list-style: none;
+}
+
+/* Remove underlines from links */
+a {
+    text-decoration: none;
+}
+
+label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-align: left;
+    color: rgb(29, 129, 79);
+  }
+
+input[name="bpm"] {
+    background-color: white;
+}
+
+
+/* Reset form element styles */
+button, input, select, textarea {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+/* Reset button styles */
+button {
+    cursor: pointer;
+}
+
+/* Additional reset rules can be added as needed */

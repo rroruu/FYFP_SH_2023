@@ -56,6 +56,7 @@ app = Flask(__name__)
 # Define a route and a view function
 @app.route('/')
 def main():
+    title = "Tempo.fy"
     return render_template('index.html')
 
 @app.route('/submit', methods=['POST'])
