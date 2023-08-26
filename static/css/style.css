@@ -1,0 +1,299 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: #1DB954;
+  letter-spacing: .15rem;
+  font-family: 'Circular', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fffEff;
+}
+
+#logo {
+  font-size: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#nav_to_pages a {
+  margin-left: 2.5rem;
+}
+
+body{
+  padding: 40px 60px;
+  font-family: 'Roboto', sans-serif;
+  color: #212121;
+}
+
+footer {
+  margin-top: 100px;
+}
+
+h2 {
+  color: #fffeff;
+  font-size: 1.5rem;
+  font-family: 'Circular Font', sans-serif;
+  margin-bottom: 1rem;
+  font-weight:400;
+}
+
+.social_icon {
+  margin-right: 30px;
+}
+
+h1 {
+ color: #1DB954;
+ font-size: 2.5rem;
+ font-family: Plus+Jakarta+Sans;
+ font-weight:800;
+ }
+
+h1, h2, h3 {
+letter-spacing: .1rem;
+margin-bottom: 1.5rem;
+}
+
+h3 {
+   color: #666666;
+ }
+
+
+header {
+   margin-bottom: 100px;
+ }
+
+.text_and_image_content {
+   display:flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 100px;
+ }
+
+ .intro_text_container {
+   width: 50%;
+ }
+
+main {
+  max-width: 1000px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+img {
+  width:100%;
+  border-radius: 5%;
+}
+
+section {
+  margin-bottom: 200px;
+}
+
+#about_me {
+ text-align:center;
+}
+
+ p {
+   letter-spacing: .1rem;
+   line-height: 1.6;
+ }
+
+form {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#contact_heading {
+  text-align: left;
+}
+
+#contact_paragraph {
+  text-align: left;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-align: left;
+  color: grey;
+}
+
+input[type="text"],input[type="email"], textarea {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 8px;
+  font-size: 1 rem;
+  text-align: left;
+  margin-bottom: 20px;
+  
+}
+
+textarea {
+  height: 200px;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background-color: #ffffff;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font: 16px;
+  align-self: flex-start;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #ffffff;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  /*add additional properties below*/
+  border: none;
+  background-color: transparent;
+  z-index: 100;
+}
+
+.menu {
+  background: #2c3437;
+  padding-top: 4rem;
+  text-align: center;
+  position: fixed;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+}
+
+.showMenu {
+  transform: translateY(0);
+}
+
+.menu li {
+  margin-bottom: 40px;
+}
+
+.menuButton {
+  color: #1DB954;
+}
+
+.menuButton:hover {
+  color: #fffEff;
+}
+
+@media only screen and (max-width: 900px){
+  .hamburger{
+    display: block;
+  }
+  #nav_to_pages {
+    display: none;
+  }
+}
+
+.text_and_image_content {
+  flex-direction: column;
+  column-gap: 20px;
+}
+.intro_text_container {
+  width: 100%;
+}
+
+
+
+/* Scroll Effect */
+
+#image-track {
+  display: flex;
+  gap: 4vmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0%, -50%); 
+  user-select: none; /* -- Prevent image highlighting -- */
+}
+
+#image-track > .image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+}
+
+/* -- YouTube Link Styles -- */
+
+body.menu-toggled > .meta-link > span {
+  color: rgb(30, 30, 30);
+}
+body {
+  background: #181819;
+}
+
+#source-link {
+  bottom: 60px;
+}
+
+#source-link > i {
+  color: rgb(94, 106, 210);
+}
+
+#yt-link > i {
+  color: rgb(239, 83, 80);
+}
+
+.meta-link {
+  align-items: center;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  bottom: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;  
+  display: inline-flex;
+  gap: 5px;
+  left: 10px;
+  padding: 10px 20px;
+  position: fixed;
+  text-decoration: none;
+  transition: background-color 400ms, border-color 400ms;
+  z-index: 10000;
+}
+
+.meta-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.meta-link > i, .meta-link > span {
+  height: 20px;
+  line-height: 20px;
+}
+
+.meta-link > span {
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+}
+/* template by Angie and Hun @ GDSC USyd */
