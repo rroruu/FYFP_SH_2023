@@ -1,16 +1,18 @@
 ##user inputs taken
 genre = ""
+maxrate = ""
+allgenres = ["pop", "hiphop", "hardstyle"]
 def userdata():
     global genre
-    age = input("What is your age?: ")
-    rhr = input("What is your resting heart rate?: ")
-    genreind = input("\nAvailable Genres:\nPlease select your most preferred genre from the following...\n1. Pop 2. HipHop 3. Hardstyle\n")
-    if genreind == 1:
-        genre = "Pop"
-    elif genreind == 2:
-        genre = "HipHop"
-    elif genreind == 3:
-        genre = "Hardstyle"
-    return genre
+    global maxrate
+    age = int(input("What is your age?: "))
+    rhr = int(input("What is your resting heart rate? (BPM): "))
+    genreind = int(input("\nAvailable Genres:\nPlease select your most preferred genre from the following...\n1. Pop 2. HipHop 3. Hardstyle\n"))
+
+    genre = allgenres[genreind-1]
+    maxrate = str(220 - age)
+    return genre, maxrate
+    
 userdata()
-print(genre)
+print("Your preferred genre is "+str(genre)+"!")
+print("Your calculated maximum heart rate (BPM) is "+maxrate+" bpm.")
