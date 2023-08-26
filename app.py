@@ -2,8 +2,18 @@ from flask import Flask, render_template, request, redirect
 import requests
 import math
 
+'''
+Import Flask framework for building web app
+Import render_template for rendering HTML templates
+Import request for accessing incoming HTTP request data
+Import redirect for URL redirection
+Import requests for making HTTP requests to Spotify API
+'''
+
 def get_token():
+    # Data for requesting the access token - sends POST request to spotify API
     data = {
+         #From Jess' spotify dev acc
         'grant_type': 'client_credentials',
         'client_id': '4a7eed16649645f198e0e08948805619',
         'client_secret': 'b42f853c09ac488fa8b0df72628019a9',
@@ -12,7 +22,7 @@ def get_token():
     return response.json()['access_token']
 headers = {
     'Authorization': f'Bearer {get_token()}',
-}
+}   
 
 def get_closest_song(heart_rate, playlist_id):
     playlist = requests.get('https://api.spotify.com/v1/playlists/' + playlist_id, headers=headers).json()
