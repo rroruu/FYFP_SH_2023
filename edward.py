@@ -13,13 +13,13 @@ track_id = "5ubvP9oKmxLUVq506fgLhk"
 
 response = requests.get(BASE_URL + "/v1/audio-features/" + track_id, headers=headers)
 
-print(response.json())
+# print(response.json())
 
-print(response.json()['tempo'])
+# print(response.json()['tempo'])
 
-response = requests.get(BASE_URL + "/v1/audio-features/", params={"ids": "id1,id2,id3"}, headers=headers)
+response = requests.get(BASE_URL + "/v1/audio-features/", params={"ids": "7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B"}, headers=headers)
 
-print(response.json())
+print(response.json()['audio_features'][1])
 
 
 # def main():
