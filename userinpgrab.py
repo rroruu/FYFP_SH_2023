@@ -14,5 +14,5 @@ def userdata():
     return genre, maxrate
     
 userdata()
-print("Your preferred genre is "+str(genre)+"!")
+print("\nYour preferred genre is "+str(genre)+"!")
 print("Your calculated maximum heart rate (BPM) is "+maxrate+" bpm.")
