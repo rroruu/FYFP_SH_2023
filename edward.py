@@ -1,25 +1,42 @@
 import requests
 
 resp = requests.post("https://accounts.spotify.com/api/token", headers={"Content-Type": "application/x-www-form-urlencoded"}, params={"grant_type": "client_credentials", "client_id": "18646cd687534f62be82b2492d7e379a", "client_secret": "7215f1ff173f4752b928534fd8c6f121"})
-
-
-# Make a simple request
+resp = resp.json()['access_token']
 BASE_URL = "https://api.spotify.com"
 headers = {
-    "Authorization": "Bearer BQDTlaKNeRhN09uTN0iv4r7grdg966RkqnGZk16ghrlrMBvFURSgP87R8q-3abf9vR8-xDGSdUPi9ikHAFgdF4eFJirFGelj7a_25Z_jDi1Uce0YiqU"
+    "Authorization": f"Bearer {resp}"
 }
 
 track_id = "5ubvP9oKmxLUVq506fgLhk"
+playlist_id = "62XbVFzTvU4qU94pT4zRw3"
 
-response = requests.get(BASE_URL + "/v1/audio-features/" + track_id, headers=headers)
-"BQDTlaKNeRhN09uTN0iv4r7grdg966RkqnGZk16ghrlrMBvFURSgP87R8q-3abf9vR8-xDGSdUPi9ikHAFgdF4eFJirFGelj7a_25Z_jDi1Uce0YiqU"
+# response = requests.get(BASE_URL + "/v1/audio-features/" + track_id, headers=headers)
 
-print(response.json())
+# print(response.json())
 
-print(response.json()['tempo'])
+# print(response.json()['tempo'])
 
-response = requests.get(BASE_URL + "/v1/audio-features/", params={"ids": "id1,id2,id3"}, headers=headers)
-"BQDTlaKNeRhN09uTN0iv4r7grdg966RkqnGZk16ghrlrMBvFURSgP87R8q-3abf9vR8-xDGSdUPi9ikHAFgdF4eFJirFGelj7a_25Z_jDi1Uce0YiqU"
+# response = requests.get(BASE_URL + "/v1/audio-features/", params={"ids": "7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B"}, headers=headers)
+
+# print(response.json()['audio_features'][1])
+
+
+
+playlist = requests.get(f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks", headers=headers)
+playlist = playlist.json()
+song_ids = [track['track']['id'] for track in playlist['items']]
+
+print(song_ids)
+
+
+
+
+
+
+
+
+
+
 
 
 # def main():
