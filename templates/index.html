@@ -15,8 +15,8 @@
     {{ message }}
 
     <form method="post" action="/submit">
-        <input type="number" placeholder="80" name="bpm">
-        <input type="text", placeholder = "link", name = "Playlist", value = "">  <!-- placeholders are the greyed out bits -->
+        <label for="bpm">Heart Rate: </label><input type="number" placeholder="120" name="bpm">
+        <label for="playlist">Playlist Link: </label><input type="text", placeholder = "https://open.spotify.com/playlist/37i9dQZF1DXdxcBWuJkbcy" name = "playlist", value = "">  <!-- placeholders are the greyed out bits -->
         <button type="submit">Generate!</button>
     </form>
     

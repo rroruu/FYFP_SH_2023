@@ -1,14 +1,6 @@
 ##user inputs taken
 import requests
-from pprint import pprint
-import math
 
-def userdata():
-    PlaylistID = "7dS7DSLcNQjRf9jwjL5pLu"
-    response = requests.get('https://api.spotify.com/v1/playlists/3cEYpjA9oz9GiPac4AsH4n', headers=headers)
-    HeartRate = int(input("What is your resting heart rate? (BPM): "))
-    return HeartRate, response
-    
 def get_token():
     data = {
         'grant_type': 'client_credentials',
@@ -21,38 +13,37 @@ headers = {
     'Authorization': f'Bearer {get_token()}',
 }
 
-heart_rate, response = userdata()
-print(heart_rate)
-data = response.json()
-print(data["name"])
+def get_closest_song(heart_rate, playlist_id):
+    playlist = requests.get('https://api.spotify.com/v1/playlists/' + playlist_id, headers=headers).json()
+    song_ids = [song['track']['id'] for song in playlist['tracks']['items']]
 
+    params = {
+        'ids': ','.join(song_ids)
+    }
 
-song_ids = [song['track']['id'] for song in data['tracks']['items']]
+    response = requests.get('https://api.spotify.com/v1/audio-features', params=params, headers=headers)
+    song_features = response.json()['audio_features']
+    song_tempo_list = [(song["tempo"], song["id"]) for song in song_features]
 
-params = {
-    'ids': ','.join(song_ids)
-}
+    song_tempo_list.sort()
+    closest_value = 0
+    smallest_distance = math.inf
 
-response = requests.get('https://api.spotify.com/v1/audio-features', params=params, headers=headers)
-song_features = response.json()['audio_features']
-song_tempo_list = [(song["tempo"], song["id"]) for song in song_features]
-pprint(song_tempo_list)
+    for (tempo, id) in song_tempo_list:
+        distance = abs(tempo - heart_rate)
+        if distance < smallest_distance:
+            closest_id = id
+            smallest_distance = distance
+        else:
+            break
 
-song_tempo_list.sort()
-closest_value = 0
-smallest_distance = math.inf
+    return closest_id
 
-for (tempo, id) in song_tempo_list:
-    distance = abs(tempo - heart_rate)
-    if distance < smallest_distance:
-        closest_id = id
-        smallest_distance = distance
-    else:
-        break
+print(get_closest_song(135, '37i9dQZF1DXdxcBWuJkbcy'))
 
-print(closest_id)
-
-
+#return page with embed with embed built in 
+#write a function containing def get_closest_song(bpm,playlist_id):
+#return closest id
 
 ##song_tempos = requests.get('https://api.spotify.com/v1/audio-features/'+song['track']['id']['tempo'])
 

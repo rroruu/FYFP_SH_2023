@@ -51,6 +51,6 @@ def main():
 @app.route('/submit', methods=['POST'])
 def submit():
     print(request.form)
-    return render_template('index.html', id=get_closest_song(float(request.form['bpm']), request.form['playlist']))
+    return render_template('index.html', id=get_closest_song(float(request.form['bpm']), request.form['playlist'].split("/")[-1]))
 
 app.run()
