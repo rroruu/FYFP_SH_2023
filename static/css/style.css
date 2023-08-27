@@ -20,8 +20,7 @@ img {
 
 .container {
   display: inline-block;
-  vertical-align: top; /* Align the container's top edge with the image's top edge */
-}
+  vertical-align: top; 
 
 a {
   color: #1DB954;
@@ -317,4 +316,4 @@ body {
   font-family: "Rubik", sans-serif;
   font-weight: 500;
 }
-/* template by Angie and Hun @ GDSC USyd */
+/* template adapted from Angie and Hun @ GDSC USyd */
