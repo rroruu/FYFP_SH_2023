@@ -25,7 +25,7 @@ ul, ol {
 a {
     text-decoration: none;
 }
-/*Configurations for the app name*/
+/*Configurations for the Name*/
 label {
     font-family: 'Circular', sans-serif;
     font-size: 20px;
@@ -55,3 +55,13 @@ button, input, select, textarea {
     background-color: transparent;
 }
 
+button{
+    box-shadow: 0 0 15px 4px rgb(138, 46, 200);
+    margin: 0 auto;
+    display: block
+}
+
+/* Reset button styles */
+button {
+    cursor: pointer;
+}
