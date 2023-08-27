@@ -24,6 +24,7 @@ headers = {
     'Authorization': f'Bearer {get_token()}',
 }   
 
+#function to get playlist and pick a song with a tempo with the closest entered bpm
 def get_closest_song(heart_rate, playlist_id):
     playlist = requests.get('https://api.spotify.com/v1/playlists/' + playlist_id, headers=headers).json()
     song_ids = [song['track']['id'] for song in playlist['tracks']['items']]
