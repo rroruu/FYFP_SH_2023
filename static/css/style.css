@@ -3,12 +3,13 @@ html {
   width: 100%;
 }
 
-<h1 style="color: #1DB954; font-size: 2.5rem; font-family: 'Circular', sans-serif; font-weight: bold;">
-    {{ title }}
-</h1>
-<p style="color: #666666; font-size: 16px; font-family: 'Circular', sans-serif;">
-    {{ message }}
-</p>
+img {
+  max-width: 50%; 
+  border-radius: 5px; 
+  padding: 10px;
+  margin: 0 auto;
+  display: block;
+}
 
 a {
   color: #1DB954;
