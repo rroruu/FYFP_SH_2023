@@ -4,11 +4,17 @@ html {
 }
 
 img {
-  max-width: 50%; 
+  max-width: 10%; 
   border-radius: 5px; 
   padding: 10px;
   margin: 0 auto;
   display: block;
+}
+
+.top-right-image {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 a {
