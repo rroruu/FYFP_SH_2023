@@ -56,9 +56,9 @@ app = Flask(__name__)
 # Define a route and a view function
 @app.route('/')
 def main():
-    title = "Tempo.fy"  
-    return render_template('index.html', title=title) 
-
+    title = 'Tempo.fy'
+    message = 'Welcome! Tempo.fy recommends songs from your chosen playlist that match your very own heart rate. Whether you\'re an athlete looking to optimize your workouts, a music enthusiast seeking novel experiences, or simply someone who believes in the power of music to heal and motivate, Tempo.fy caters to you.'
+    return render_template('index.html', title=title, message=message)
 
 @app.route('/submit', methods=['POST'])
 def submit():
